@@ -75,4 +75,4 @@ userSchema.methods = {
 };
 //export user model based on userSchema.
 
-modules.export = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);
