@@ -8,16 +8,16 @@ Router.onRouteChangeStart = url => NProgress.start();
 Router.onRouteChangeComplete = url => NProgress.done();
 Router.onRouteChangeError = url => NProgress.done();
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     const head = () => (
-        <React.Fragment>            
-            <link 
-                rel="stylesheet" 
-                href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-                integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+        <React.Fragment>
+            <link
+                rel="stylesheet"
+                href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
                 crossOrigin="anonymous"
             />
-            <link rel="stylesheet" href="/static/css/styles.css"/>
+            <link rel="stylesheet" href="/static/css/styles.css" />
         </React.Fragment>
     );
 
@@ -30,20 +30,20 @@ const Layout = ({children}) => {
             </li>
             <li className="nav-item">
                 <Link href="/login">
-                    <a className="nav-link text-dark">login</a>
+                    <a className="nav-link text-dark">Login</a>
                 </Link>
             </li>
             <li className="nav-item">
                 <Link href="/register">
-                    <a className="nav-link text-dark">register</a>
+                    <a className="nav-link text-dark">Register</a>
                 </Link>
             </li>
         </ul>
     );
 
-    return(
+    return (
         <React.Fragment>
-           {head()} {nav()} <div className="container pt-5 pb-5">{children}</div>
+            {head()} {nav()} <div className="container pt-5 pb-5">{children}</div>
         </React.Fragment>
     );
 };
