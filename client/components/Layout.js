@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
                 isAuth() && isAuth().role == 'admin' && (
                     <li className="nav-item ml-auto">
                         <Link href="/admin">
-                            <a className="nav-link text-dark">Admin</a>
+                            <a className="nav-link text-dark">{isAuth().name}</a>
                         </Link>
                     </li>
                 )
@@ -59,15 +59,18 @@ const Layout = ({ children }) => {
                 isAuth() && isAuth().role == 'subscriber' && (
                     <li className="nav-item ml-auto">
                         <Link href="/user">
-                            <a className="nav-link text-dark">User</a>
+                            <a className="nav-link text-dark">{isAuth().name}</a>
                         </Link>
                     </li>
                 )
             }
-
-            <li className="nav-item">
-                <a onClick={logout} className="nav-link text-dark">Logout</a>
-            </li>
+            {
+                isAuth() && (
+                    <li className="nav-item">
+                        <a onClick={logout} className="nav-link text-dark">Logout</a>
+                    </li>
+                )
+            }
         </ul>
     );
 
